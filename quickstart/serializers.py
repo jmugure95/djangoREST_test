@@ -41,7 +41,6 @@ class CharityRegistrationSerializer(serializers.ModelSerializer):
         fields = [
             'email',
             'charity_name',
-            'password',
             'city',
         ]
 

@@ -1,4 +1,4 @@
-from quickstart.views import ItemApiView
+from quickstart.views import ItemApiView, CharityRegistrationView, UserRegistrationView
 from quickstart import views
 from django.urls import path, include
 
@@ -13,5 +13,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-token-auth/', auth_views.obtain_auth_token),
     path('create_item/', ItemApiView.as_view({'post': 'create'})),
+    path('create_charity/', CharityRegistrationView.as_view({'post': 'create'})),
+    path('create_user/', UserRegistrationView.as_view({'post': 'create'})),
 
 ]
