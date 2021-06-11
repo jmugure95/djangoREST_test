@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from quickstart.models import Item
+from quickstart.models import Item, CharityRegistration, UserRegistration
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -28,10 +28,31 @@ class ItemSerializer(serializers.ModelSerializer):
         model = Item
         fields = [
             'id',
-            'itemId',
             'itemName',
-            'price',
             'quantity',
             'category',
+            'charity',
+        ]
 
+
+class CharityRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CharityRegistration
+        fields = [
+            'email',
+            'charity_name',
+            'password',
+            'city',
+        ]
+
+
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserRegistration
+        fields = [
+            'email',
+            'charity_name',
+            'username',
+            'password',
+            'city',
         ]
