@@ -22,7 +22,6 @@ class GroupApiView(viewsets.ModelViewSet):
 
 class ItemApiView(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
-    # http_method_names = ['get', 'post']
     queryset = Item.objects.all()
 
     def get_serializer_class(self):

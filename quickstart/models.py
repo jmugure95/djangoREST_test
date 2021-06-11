@@ -10,3 +10,13 @@ class Item(models.Model):
 
     def __str__(self):
         return self.itemName
+
+
+class CharityRegistration(models.Model):
+    email = models.EmailField()
+    charity_name = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.email
