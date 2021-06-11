@@ -40,7 +40,7 @@ class ItemApiView(viewsets.ModelViewSet):
 
 
 class CharityRegistrationView(viewsets.ModelViewSet):
-    queryset = CharityRegistration.objects.all()
+    # queryset = CharityRegistration.objects.all()
 
     def get_serializer_class(self):
         return CharityRegistrationSerializer
