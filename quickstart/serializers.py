@@ -39,6 +39,7 @@ class CharityRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CharityRegistration
         fields = [
+            'id',
             'email',
             'charity_name',
             'city',

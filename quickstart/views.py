@@ -45,21 +45,8 @@ class ItemApiView(viewsets.ModelViewSet):
 
 
 class CharityRegistrationView(viewsets.ModelViewSet):
-    # queryset = CharityRegistration.objects.all()
-
-    def get_serializer_class(self):
-        return CharityRegistrationSerializer
-
-    def create(self, request, *args, **kwargs):
-        data = request.data
-        serializer_class = self.get_serializer_class()
-        serializer = serializer_class(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"success": True,
-                             "data": serializer.data},
-                            status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    queryset = CharityRegistration.objects.all()
+    serializer_class = CharityRegistrationSerializer
 
 
 class UserRegistrationView(viewsets.ModelViewSet):
