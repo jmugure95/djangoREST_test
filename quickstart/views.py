@@ -40,7 +40,6 @@ class ItemApiView(viewsets.ModelViewSet):
         queryset = Item.objects.all()
         serializer_class = self.get_serializer_class()
         serializer = serializer_class(queryset, many=True)
-        # print(serializer.data)
         return Response(serializer.data)
 
 
@@ -66,8 +65,3 @@ class UserRegistrationView(viewsets.ModelViewSet):
                             status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-#     def list(self, request, *args, **kwargs):
-#         queryset = Item.objects.all()
-#         serializer_class = self.get_serializer_class()
-#         serializer = serializer_class(queryset, many=True)
-#         return Response(serializer.data)
